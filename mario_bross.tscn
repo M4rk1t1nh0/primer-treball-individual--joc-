@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqkvmplocvixh"]
+
+[ext_resource type="PackedScene" uid="uid://c63iays6jeftt" path="res://mario.tscn" id="2_ryv2c"]
+[ext_resource type="Texture2D" uid="uid://dcsvdnoewltn" path="res://sampleb.png" id="4_caw1u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryv2c"]
+size = Vector2(4078, 644)
+
+[node name="Joc" type="Node2D"]
+
+[node name="Sampleb" type="Sprite2D" parent="."]
+position = Vector2(1554.5, 315)
+scale = Vector2(4.439, 1.25437)
+texture = ExtResource("4_caw1u")
+
+[node name="Mario" parent="." instance=ExtResource("2_ryv2c")]
+position = Vector2(90, 313)
+
+[node name="bordes" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bordes"]
+position = Vector2(1551, 314)
+shape = SubResource("RectangleShape2D_ryv2c")
