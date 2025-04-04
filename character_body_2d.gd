@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var gravetat := Vector2.DOWN * 980
-var velocitat := 200
-var SALT = -1000
+var velocitat := 250
+var SALT = -800
 
 func _process(delta: float) -> void:
 	var dx := Input.get_axis("moure_esquerra","moure_dreta")
