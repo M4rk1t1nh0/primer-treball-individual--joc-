@@ -14,3 +14,5 @@ func _process(delta: float) -> void:
 	velocity += gravetat * delta
 	move_and_slide()
 	
+
+		
