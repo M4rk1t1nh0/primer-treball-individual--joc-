@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://br5my20j84jp3"]
+
+[ext_resource type="Script" uid="uid://7ii7qh2nm5n1" path="res://colorbandera.gd" id="1_btphw"]
+[ext_resource type="Texture2D" uid="uid://dcmsuf3cxvcpr" path="res://baixa (4).png" id="2_h4hr2"]
+
+[node name="detector" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(3546, 199)
+script = ExtResource("1_btphw")
+
+[node name="Baixa(4)" type="Sprite2D" parent="Area2D"]
+position = Vector2(19, 44)
+scale = Vector2(0.470909, 1.10656)
+texture = ExtResource("2_h4hr2")

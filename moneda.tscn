@@ -11,7 +11,8 @@ height = 44.0
 script = ExtResource("1_r4iok")
 
 [node name="Moneda1" type="Sprite2D" parent="."]
-scale = Vector2(0.085094, 0.093254)
+position = Vector2(0.0594158, -0.00280198)
+scale = Vector2(0.085094, 0.0934703)
 texture = ExtResource("2_3fws3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
