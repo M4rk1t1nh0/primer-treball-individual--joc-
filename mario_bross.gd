@@ -3,6 +3,7 @@ extends Sprite2D
 var velocitat := 200
 var direccio := Vector2.ZERO
 
+
 func _ready() -> void:
 	direccio = Vector2(500,300)
 
