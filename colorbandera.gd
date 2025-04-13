@@ -1,4 +1,7 @@
 extends Area2D
+signal victoria
 
 func _on_body_entered_ (body: Node2D) -> void:
-	$ColorRect.color = Color(0,1,0)
+	if body.name == "Mario":
+		emit_signal("victoria")
+		get_tree().change_scene_to_file("res://victòria.tscn")

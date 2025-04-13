@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c63iays6jeftt"]
+[gd_scene load_steps=12 format=3 uid="uid://c63iays6jeftt"]
 
 [ext_resource type="Script" uid="uid://m0abhatd10b8" path="res://character_body_2d.gd" id="1_4ckko"]
 [ext_resource type="Texture2D" uid="uid://cdicdnqoii4yw" path="res://baixa.png" id="2_4gsdp"]
@@ -7,6 +7,30 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrvex"]
 radius = 43.0
 height = 106.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ckko"]
+atlas = ExtResource("3_4ckko")
+region = Rect2(35, 90, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gsdp"]
+atlas = ExtResource("3_4ckko")
+region = Rect2(70, 90, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_752v2"]
+atlas = ExtResource("3_4ckko")
+region = Rect2(105, 90, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76esm"]
+atlas = ExtResource("3_4ckko")
+region = Rect2(350, 135, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdawk"]
+atlas = ExtResource("3_4ckko")
+region = Rect2(385, 135, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv04r"]
+atlas = ExtResource("3_4ckko")
+region = Rect2(140, 90, 35, 45)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4gsdp"]
 animations = [{
@@ -20,14 +44,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_4ckko")
+"texture": SubResource("AtlasTexture_4ckko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gsdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_752v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76esm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdawk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv04r")
 }],
 "loop": true,
 "name": &"saltar",
 "speed": 5.0
 }]
 
-[node name="Mario" type="CharacterBody2D"]
+[node name="mario" type="CharacterBody2D"]
 script = ExtResource("1_4ckko")
 
 [node name="MarioBross" type="Sprite2D" parent="."]
@@ -46,6 +85,7 @@ position = Vector2(-3, 16)
 shape = SubResource("CapsuleShape2D_wrvex")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(337, 0)
 sprite_frames = SubResource("SpriteFrames_4gsdp")
 animation = &"saltar"

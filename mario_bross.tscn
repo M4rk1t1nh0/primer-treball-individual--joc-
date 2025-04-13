@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bqkvmplocvixh"]
+[gd_scene load_steps=30 format=3 uid="uid://bqkvmplocvixh"]
 
 [ext_resource type="PackedScene" uid="uid://c63iays6jeftt" path="res://mario.tscn" id="2_ryv2c"]
 [ext_resource type="PackedScene" uid="uid://bavoy6sg3g55v" path="res://moneda.tscn" id="3_aq385"]
@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://dvl3u5m5or1eu" path="res://04B_30__.TTF" id="4_3vycv"]
 [ext_resource type="Texture2D" uid="uid://dcsvdnoewltn" path="res://sampleb.png" id="4_caw1u"]
 [ext_resource type="PackedScene" uid="uid://br5my20j84jp3" path="res://detector.tscn" id="4_mthmu"]
+[ext_resource type="Texture2D" uid="uid://hnlyjawcculr" path="res://baixa (1).png" id="7_3vycv"]
+[ext_resource type="PackedScene" uid="uid://ijenjv47gvg6" path="res://victòria.tscn" id="8_ex7op"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryv2c"]
 size = Vector2(788, 48)
@@ -76,6 +78,10 @@ size = Vector2(39.0001, 184.103)
 position = Vector2(1580, 309)
 scale = Vector2(4.439, 2.13981)
 texture = ExtResource("4_caw1u")
+
+[node name="detector" parent="Sampleb" instance=ExtResource("4_mthmu")]
+position = Vector2(-355.936, -144.405)
+scale = Vector2(0.225276, 0.467331)
 
 [node name="bordes" type="StaticBody2D" parent="Sampleb"]
 position = Vector2(-404.821, -251.122)
@@ -165,14 +171,11 @@ shape = SubResource("RectangleShape2D_kddk7")
 position = Vector2(3739.5, 467.396)
 shape = SubResource("RectangleShape2D_eo83u")
 
-[node name="Mario" parent="." instance=ExtResource("2_ryv2c")]
-position = Vector2(90, 313)
+[node name="Monedas2" parent="." instance=ExtResource("3_aq385")]
+position = Vector2(545, -175)
 
 [node name="Monedas" parent="." instance=ExtResource("3_aq385")]
 position = Vector2(-431, 387)
-
-[node name="Monedas2" parent="." instance=ExtResource("3_aq385")]
-position = Vector2(545, -175)
 
 [node name="Monedas3" parent="." instance=ExtResource("3_aq385")]
 position = Vector2(2357, 461)
@@ -189,17 +192,34 @@ position = Vector2(3315, -134)
 [node name="Monedas7" parent="." instance=ExtResource("3_aq385")]
 position = Vector2(3431, 668)
 
-[node name="detector" parent="." instance=ExtResource("4_mthmu")]
+[node name="Mario" parent="." instance=ExtResource("2_ryv2c")]
+position = Vector2(90, 313)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Baixa(1)" type="Sprite2D" parent="Mario"]
+position = Vector2(-513, -296)
+scale = Vector2(0.133333, 0.102222)
+texture = ExtResource("7_3vycv")
 
-[node name="Contador" type="Label" parent="CanvasLayer"]
-offset_left = 30.0
-offset_top = 18.0
-offset_right = 400.0
-offset_bottom = 59.0
+[node name="Contador" type="Label" parent="Mario"]
+offset_left = -476.0
+offset_top = -317.0
+offset_right = -106.0
+offset_bottom = -276.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_3vycv")
 theme_override_font_sizes/font_size = 40
 text = "monedes: "
 script = ExtResource("3_caw1u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Victòria" parent="." instance=ExtResource("8_ex7op")]
+visible = false
+
+[connection signal="moneda_recollida" from="Monedas2" to="Mario/Contador" method="_on_monedas_2_moneda_recollida"]
+[connection signal="moneda_recollida" from="Monedas" to="Mario/Contador" method="_on_monedas_moneda_recollida"]
+[connection signal="moneda_recollida" from="Monedas3" to="Mario/Contador" method="_on_monedas_3_moneda_recollida"]
+[connection signal="moneda_recollida" from="Monedas4" to="Mario/Contador" method="_on_monedas_4_moneda_recollida"]
+[connection signal="moneda_recollida" from="Monedas5" to="Mario/Contador" method="_on_monedas_5_moneda_recollida"]
+[connection signal="moneda_recollida" from="Monedas6" to="Mario/Contador" method="_on_monedas_6_moneda_recollida"]
+[connection signal="moneda_recollida" from="Monedas7" to="Mario/Contador" method="_on_monedas_7_moneda_recollida"]

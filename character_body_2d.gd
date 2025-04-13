@@ -21,3 +21,4 @@ func anima(velocitat: Vector2) -> void:
 	if velocitat.x < 0:
 		$MarioBross.flip_h = true
 		
+ 

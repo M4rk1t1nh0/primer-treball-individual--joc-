@@ -1,5 +1,8 @@
 extends Area2D
 
-func _on_body_entered(body:CharacterBody2D) -> void:
-	queue_free()
-	
+signal moneda_recollida
+
+func _on_body_entered(body):
+	if body.name == "Mario":
+		emit_signal("moneda_recollida") 
+		queue_free()  
